@@ -9,87 +9,74 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+         <link href="/css/welcome.css" rel="stylesheet">
+
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+      <div class="login-wrap">
+<div class="login-html">
+  <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Вход</label>
+  <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Регистрация</label>
+  <div class="login-form">
+    <div class="sign-in-htm">
+      <div class="group">
+        <label for="user" class="label">Логин</label>
+        <input id="user" type="text" class="input">
+      </div>
+      <div class="group">
+        <label for="pass" class="label">Пароль</label>
+        <input id="pass" type="password" class="input" data-type="password">
+      </div>
+      <div class="group">
+        <input id="check" type="checkbox" class="check" checked>
+        <label for="check"><span class="icon"></span>Запомнить</label>
+      </div>
+      <div class="group">
+        <input type="submit" class="button" value="Войти">
+      </div>
+      <div class="hr"></div>
+      <div class="foot-lnk">
+        <a href="/forgot">Забыли пароль?</a>
+      </div>
+    </div>
+    <div class="sign-up-htm">
+      <div class="group">
+        <label for="name" class="label">Имя</label>
+        <input id="name" type="text" class="input">
+      </div>
+      <div class="group">
+        <label for="surname" class="label">Фамилия</label>
+        <input id="surname" type="text" class="input">
+      </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+      <div class="group">
+        <label for="user" class="label">Логин</label>
+        <input id="user" type="text" class="input">
+      </div>
+      <div class="group">
+        <label for="pass" class="label">Пароль</label>
+        <input id="pass" type="password" class="input" data-type="password">
+      </div>
+      <div class="group">
+        <label for="pass" class="label">Повторите Пароль</label>
+        <input id="pass" type="password" class="input" data-type="password">
+      </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
+      <div class="group">
+        <label for="pass" class="label">Email</label>
+        <input id="pass" type="text" class="input">
+      </div>
+      <div class="group">
+        <input type="submit" class="button" value="Зарегистрироваться">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
     </body>
 </html>

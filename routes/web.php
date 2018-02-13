@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/forgot', function () {
+    return view('forgotPassword');
+});
 
 Auth::routes();
 
