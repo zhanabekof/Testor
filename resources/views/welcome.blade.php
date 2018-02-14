@@ -14,6 +14,11 @@
 
         <!-- Styles -->
     </head>
+	<style>
+        input[type="text"]:focus { outline: none; }
+        input[type="password"]:focus { outline: none; }
+        input[type="submit"]:focus { outline: none; }
+    </style>
     <body>
       <div class="login-wrap">
 <div class="login-html">
