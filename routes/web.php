@@ -17,6 +17,9 @@ Route::get('/', function () {
 Route::get('/forgot', function () {
     return view('forgotPassword');
 });
+Route::get('/logout', function () {
+    Auth::logout();
+});
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('student/subjects', function () {
