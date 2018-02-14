@@ -18,6 +18,20 @@ Route::get('/forgot', function () {
     return view('forgotPassword');
 });
 
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('student/subjects', function () {
+    return view('student.subjects');
+  });
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
