@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Subject;
 class StudentController extends Controller
 {
     /**
@@ -15,7 +15,10 @@ class StudentController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function GetSubjects()
+    {
+      return view('student.subject',['subjects'=>Subject::all()]);
+    }
     /**
      * Show the application dashboard.
      *
