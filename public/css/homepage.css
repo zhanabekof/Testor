@@ -1,0 +1,205 @@
+
+body {
+  background-color: #fff;
+}
+.container {
+  width: 80%;
+}
+
+
+
+/* ----NAVIGATION---- */
+.logo {
+  height: 42px;
+  width: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  margin-top: -10px;
+}
+.navbar {
+  background-color: black;
+  background-color: transparent;
+  background: transparent;
+  background: #fff;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar-default .navbar-brand {
+  color: black;
+}
+/* styling the active menu */
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #0a7791;
+  background: none;
+}
+/* menu items */
+.navbar-default .navbar-nav li a {
+  color: black;      
+}
+
+/* menu items hover */
+.navbar-default .navbar-nav li a:hover {
+  color: black;
+}
+
+
+
+
+/* ----WELCOME---- */
+#welcome {
+  padding-top: 50px;
+  background: #fff;  
+}
+#row0 {
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 300px;
+}
+/* jquery hover function use only. */
+.jqdown {
+  color: white;
+  font-size: 10px;
+}
+.down #down {
+  position: relative;
+  font-size: 900%;
+  margin-top: 20px;
+  color: rgba(45, 164, 125, 0.9);
+}
+#wel {
+  font-size: 800%;
+  padding-bottom: 10px;
+}
+#hangout {
+  font-size: 450%;
+  padding-bottom: 40px;
+}
+
+
+/* ----ABOUT PAGE/SECTION---- */
+#about {
+  padding-top: 50px;
+  padding-bottom: 10%;
+}
+#row1 {
+}
+#about_col1, #about_col2, #about_col3 {
+  padding: 2.3%;
+}
+#aboutMe {
+  padding-top: 8%;
+}
+#nutshell {
+}
+hr {
+  border-top: 1px solid grey;
+  padding-bottom: 3%;
+}
+
+
+
+
+/* ----CONTACT PAGE/SECTION---- */
+#contact {
+  padding-top: 50px;
+  padding-bottom: 200px;
+  background-color: #fff;
+}
+#contact .container {
+  /*width: 40%;*/
+}
+#contact form {
+  width: 80%;
+  margin: auto;
+}
+form h1 {
+  padding-top: 8%;
+}
+.form-control:focus {
+  border-color: rgba(45, 164, 125, 0.9);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(111, 215, 0, 0.6);
+}
+
+
+
+
+
+/* RESPONSIVE STYLING BELOW: */
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .navbar {
+  background-color: black;
+  border: none;
+  margin: 0;
+  padding: 0;
+  }
+  .navbar-default .navbar-nav li a:hover {
+    color: white;
+    background-color: #111111;
+  }
+  /* active collapsed navbar styles. */
+  .navbar-default .navbar-nav > .active > a, 
+  .navbar-default .navbar-nav > .active > a:hover, 
+  .navbar-default .navbar-nav > .active > a:focus     {
+    color: black;
+    background: lightgray;
+    border-bottom: none;
+  }  
+  /* Welcome resize */
+  #wel {
+    font-size: 400%;
+  }
+  #hangout {
+    font-size: 200%;
+  }
+  .down #down {
+  position: relative;
+  font-size: 400%;
+  margin-top: 5px;
+  color: rgba(45, 164, 125, 0.9);
+  }
+  
+}
+
+/* Taking out spacing above/below first/last li menus items in collapsed view - seems to be visible only in collapsed view.*/
+.nav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* take out white line under navbar in collapse. */
+.navbar.navbar-default .navbar-collapse {
+  border: none;
+  box-shadow: none;
+}
+/* remove navbar border/background from collapsed */
+.navbar-default .navbar-toggle{
+ border: none;
+ background: none;
+}
+/* remove hover bg color from menu */
+.navbar-default .navbar-toggle:hover { 
+  background: none;
+}
+/* remove unselected bg color from menu */
+.navbar-default .navbar-toggle:focus {
+  background: none;
+}
+/* Styling on hover iconbars. */
+.navbar-default .navbar-toggle:hover .icon-bar { 
+  background-color: lightgray;
+}
+
+
+
+/* ----TEXT STYLING---- */
+h1, h2, h3, h4 {
+  font-family: Raleway;
+}
+p {
+  font-family: Raleway;
+  font-size: 110%;
+}

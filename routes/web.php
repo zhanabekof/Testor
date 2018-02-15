@@ -17,15 +17,26 @@ Route::get('/', function () {
 Route::get('/forgot', function () {
     return view('forgotPassword');
 });
-Route::get('/logout', function () {
-    Auth::logout();
+Route::get('contacts', function () {
+  return view('contacts');
+});
+Route::get('about', function () {
+  return view('about');
+});
+Route::get('homepage', function () {
+  return view('homepage');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-  Route::get('student/subjects', function () {
-    return view('student.subjects');
+  Route::get('/logout', function () {
+      Auth::logout();
   });
+  Route::get('student/cabinet', function () {
+    return view('student.cabinet');
+  });
+  Route::get('student/subjects','StudentController@getSubjects');
 });
+
 
 Auth::routes();
 

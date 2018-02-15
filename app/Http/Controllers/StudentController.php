@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Subject;
+use App\Subject;
 class StudentController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class StudentController extends Controller
     }
     public function GetSubjects()
     {
-      return view('student.subject',['subjects'=>Subject::all()]);
+      $subjects = Subject::all();
+      return view('student.subjects',['subjects'=>$subjects]);
     }
     /**
      * Show the application dashboard.

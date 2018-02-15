@@ -9,7 +9,7 @@ html {
 }
 
 header h1 {
-  color: #3B9954;
+  color: rgba(45, 164, 125, 0.9);
   text-align: center;
 }
 
@@ -91,7 +91,7 @@ section {
 .flipbox .front {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
-  background: #3B9954;
+  background: rgba(45, 164, 125, 0.9);
 }
 .flipbox .front > h2 {
   font-size: 22px;
@@ -112,7 +112,7 @@ section {
 .flipbox .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  background: #3B99CA;
+  background: #eeaf11;
 }
 .flipbox .back > a {
   -ms-flex-item-align: center;
