@@ -12,15 +12,14 @@
 		<link rel="stylesheet" href="/css/profile.css">
         <!-- Styles -->
     </head>
-	
+
     <body>
       <div class="container">
     <!-- Navigation bar  -->
     <header>
        <a href="/homepage"><img src="/images/logo.png" alt="Логотип"></a>
-      
       <nav>
-           <a href="/homepage">Главная</a>
+           <a href="/student/subjects">Главная</a>
            <a href="/about">О нас</a>
            <a href="/contacts">Контакты</a>
 		   <a href="/student/cabinet">Личный кабинет</a>
@@ -30,13 +29,13 @@
 
             <aside>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOUnhTI2cdtTmNaiqOMW8JWNlmLgtzQSbwx_YyfY8pgerSdbcZQ" alt="" class="profile-image" />
-                <h1 class="name"><i class="fa fa-user-circle-o" style="font-size:20px; color:green"></i>Name Surname</h1>
+                <h1 class="name"><i class="fa fa-user-circle-o" style="font-size:20px; color:green"></i>{{ $user->name }}</h1>
                 <span class="description">Login</span>
                 <span class="description">Mail</span>
-               
+
                 <ul class="social">
                     <li>
-                        <span>Дата регистрации</span>
+                        <span>{{$user->created_at}}</span>
                         <span>173</span>
                     </li>
                     <li>
@@ -89,9 +88,9 @@
 		</tr>
 	</tbody>
 </table>
-               
+
             </div>
-       
+
     </div>
 
     </body>

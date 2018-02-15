@@ -31,10 +31,9 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/logout', function () {
       Auth::logout();
   });
-  Route::get('student/cabinet', function () {
-    return view('student.cabinet');
-  });
-  Route::get('student/subjects','StudentController@getSubjects');
+  Route::get('/student/cabinet','StudentController@getCabinet');
+  Route::get('/teacher/create','TeacherController@getCreate');
+  Route::get('/student/subjects','StudentController@getSubjects');
 });
 
 

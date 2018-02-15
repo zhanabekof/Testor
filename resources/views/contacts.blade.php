@@ -14,11 +14,11 @@
         <link href="/css/homepage.css" rel="stylesheet">
         <!-- Styles -->
     </head>
-	
+
     <body>
       <body data-spy="scroll" data-target=".navbar" data-offset="50">
-  
-  
+
+
 
   <!-- Navbar. Reference for navbar:
   https://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
@@ -28,7 +28,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/homepage"><img src="/images/logo.png" alt="Логотип"></a>
       </div>
@@ -36,7 +36,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/homepage">Главная</a></li>
           <li><a href="/about">О нас</a></li>
-          <li><a href="/contact">Контакты</a></li>
+          <li><a href="/contacts">Контакты</a></li>
           <li><a href="/" class="login">Вход/Регистрация</a></li>
         </ul>
       </div>
@@ -45,39 +45,20 @@
 
   <!-- contact -->
   <div class="contact" id="contact">
-    <div class="container">
+    <div class="container" style="margin-top:200px">
       <div class="row" id="row4">
         <div class="col-md-12">
-          <form>
-            <h1 class="text-center">Контакты</h1>
-            <h3 class="text-center">г. Астана, ул. Алии Молдагуловой 25, Компьютерная Академия ШАГ</h3>
-            <h4 class="text-center">Остались вопросы? Напишите нам.</h4>
-            <hr width= "8%">
-            <div class="form-group">
-              <input type="name" class="form-control" id="name" placeholder="Имя">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="phone" class="form-control" id="phone" placeholder="Телефон">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" rows="5" id="comment" placeholder="Комментарий"></textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Отправить</button>
-          </form>
+          <h1 class="text-center">Контакты</h1>
+          <h3 class="text-center">г. Астана, ул. Алии Молдагуловой 25, Компьютерная Академия ШАГ</h3>
         </div>
       </div>
     </div>
   </div>
-  
-  
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
-  
+
 
     <script  src="/js/homepage.js"></script>
 </html>

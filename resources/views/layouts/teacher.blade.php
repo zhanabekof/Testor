@@ -27,7 +27,8 @@
          <a href="/homepage" >Главная</a>
          <a href="/about">О нас</a>
          <a href="/contacts">Контакты</a>
-          <a href="/student/cabinet">Личный кабинет</a>
+          <a href="/teacher/create">Создать тест</a>
+          <a href="/teacher/cabinet">Личный кабинет</a>
          <a href="/" class="login" >Выйти</a>
        </nav>
   </header>

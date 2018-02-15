@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Subject;
+use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
 {
     /**
@@ -17,8 +18,14 @@ class StudentController extends Controller
     }
     public function GetSubjects()
     {
+
       $subjects = Subject::all();
       return view('student.subjects',['subjects'=>$subjects]);
+    }
+    public function GetCabinet()
+    {
+      $user = Auth::user();
+      return view('student.cabinet',['user'=>$user]);
     }
     /**
      * Show the application dashboard.
