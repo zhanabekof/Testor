@@ -184,3 +184,8 @@ a{color:rgb(241, 255, 245);text-decoration:none}
 .container header nav a:hover {
   color: #0a7791;
 }
+
+.container header nav .login {
+  border-left: 1px solid grey;
+  padding-left: 20px;
+}

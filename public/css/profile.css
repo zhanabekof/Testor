@@ -197,3 +197,7 @@ aside .social li span:nth-child(2) {
 .container header nav a:hover {
   color: #0a7791;
 }
+.container header nav .login {
+  border-left: 1px solid grey;
+  padding-left: 20px;
+}

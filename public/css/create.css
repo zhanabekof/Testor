@@ -8,14 +8,14 @@
 }
 
 html, body {
-  color:black;
+  color: black;
   font-family: 'Merriweather', sans-serif;
   padding: 1em;
 }
 
 h1 {
   text-align: center;
-  color: #a8a8a8;
+  color: rgba(45, 164, 125, 0.9);
   text-shadow: 1px 1px 0 white;
 }
 
@@ -47,7 +47,7 @@ form input:not(#choice1):not(#choice2):not(#choice3):focus, form textarea:focus 
 }
 form #send {
   color: white;
-  background: #e74c3c;
+  background: rgba(45, 164, 125, 0.9);
   cursor: pointer;
 }
 form #send:hover {
