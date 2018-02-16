@@ -32,7 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
       Auth::logout();
   });
   Route::get('/student/cabinet','StudentController@getCabinet');
+  Route::get('/student/test','StudentController@getTest');
   Route::get('/teacher/create','TeacherController@getCreate');
+  Route::post('/teacher/create','TeacherController@postCreate');
   Route::get('/student/subjects','StudentController@getSubjects');
 });
 

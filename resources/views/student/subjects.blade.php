@@ -1,13 +1,13 @@
 @extends('layouts.student')
 @section('content')
 <header>
-  <h1>Тесты по программированию</h1>
+  <h1>Тест по программированию</h1>
 </header>
     @foreach($subjects as $subject)
     <div class="flipbox">
       <div class="back">
         <p>{{ $subject->sub_name }}</p>
-        <a href="/test/?id={{$subject->id}}" target="_blank">Пройти тест!</a>
+        <a href="/student/test/?id={{$subject->id}}" target="_blank">Пройти тест!</a>
       </div>
       <div class="front">
         <h2>{{ $subject->sub_name }}</h2>

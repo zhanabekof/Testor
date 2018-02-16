@@ -2,14 +2,14 @@
 @section('content')
 <h1>Создать тест</h1>
 
-<form class="cf">
-
+<form class="cf" action="/teacher/create" method="post">
+    {{ csrf_field() }}
   <div class="half left cf">
     <label>Выберите предмет</label>
   </div>
 
   <div class="half right cf">
-    <select>
+    <select name="selectsubject">
       @foreach($subjects as $subject)
       <option value="{{ $subject->id }}">{{ $subject->sub_name }}</option>
       @endforeach
