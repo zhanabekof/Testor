@@ -1,14 +1,19 @@
 body{
 	margin:0;
-	color:#ffffff;
+	
 	background:#fff;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
-a{color:rgb(241, 255, 245);text-decoration:none}
-
+a{}
+ul{
+	list-style: none;
+}
+ul li{
+	margin-top: 20px
+}
 .login-wrap{
 	width:100%;
 	margin:auto;

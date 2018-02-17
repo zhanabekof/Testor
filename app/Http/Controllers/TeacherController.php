@@ -35,6 +35,21 @@ class TeacherController extends Controller
         $subjects = Subject::all();
         return view('teacher.createsubject',['subjects'=>$subjects]);
     }
+
+    public function getQuestions()
+    {
+        $user_id = Auth::id();
+        $questions = Question::where('user_id', $user_id)->get();
+        return view('teacher.questions',['questions'=>$questions]);
+    }
+    public function getQuestion(Request $request)
+    {
+        $subjects = Subject::all();
+        $questions = Question::where('id', $request->id)->first();
+        $answers = Answer::where('question_id', $questions->id)->get();
+        return view('teacher.question',['question'=>$questions,'answers'=>$answers,'subjects'=>$subjects]);
+    }
+
     public function postCreate(Request $request)
     {
       
@@ -63,7 +78,7 @@ class TeacherController extends Controller
             $answer->success = true;
       }
       else{
-        $answer->success = false;
+            $answer->success = false;
       }
       $answer->answer_name = $request->answer2;
       $answer->save();

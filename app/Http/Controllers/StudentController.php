@@ -39,6 +39,7 @@ class StudentController extends Controller
       $totalRows = count($questions) - 1;
       $skip = $totalRows > 0 ? mt_rand(0, $totalRows) : 0;
       $answers=[];
+    
       for ($i = 0; $i < count($questions); $i++) {
         $answers = DB::table('answer')->where('question_id', $questions[$i]->id)->get();
       }

@@ -34,8 +34,11 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/student/cabinet','StudentController@getCabinet');
   Route::get('/student/test','StudentController@getTest');
   Route::get('/teacher/create','TeacherController@getCreate');
+  Route::get('/teacher/questions','TeacherController@getQuestions');
   Route::post('/teacher/create','TeacherController@postCreate');
+  Route::get('/teacher/getquestion','TeacherController@getQuestion');
   Route::get('/student/subjects','StudentController@getSubjects');
+  
 });
 
 
