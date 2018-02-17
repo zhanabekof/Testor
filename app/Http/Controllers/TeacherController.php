@@ -6,6 +6,8 @@ use App\Test;
 use App\Answer;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
@@ -35,16 +37,51 @@ class TeacherController extends Controller
     }
     public function postCreate(Request $request)
     {
-      $test = new Question();
-      //$test->user_id = Auth::user->id;
-      $test->test_name = $request->question;
+      
+      $questions = new Question();
+      $questions->question_name = $request->question;
+      $questions->test_id = $request->selectsubject;
+      $questions->user_id = $userId = Auth::id();
+      $questions->save();
+        
       $answer = new Answer();
-    //$answer->question_id =
-      echo '<pre>';
-      var_dump($request->selectsubject);
-      echo '</pre>';
+      $answer->question_id = $questions->id;
+      if($request->success == "First Choice")
+      {
+            $answer->success = true;
+      }
+      else{
+        $answer->success = false;
+      }
+      $answer->answer_name = $request->answer1;
+      $answer->save();
+
+      $answer = new Answer();
+      $answer->question_id = $questions->id;
+      if($request->success == "Second Choice")
+      {
+            $answer->success = true;
+      }
+      else{
+        $answer->success = false;
+      }
+      $answer->answer_name = $request->answer2;
+      $answer->save();
+
+      $answer = new Answer();
+      $answer->question_id = $questions->id;
+      if($request->success == "Third Choice")
+      {
+            $answer->success = true;
+      }
+      else{
+        $answer->success = false;
+      }
+      $answer->answer_name = $request->answer3;
+      $answer->save();
+     
+     
+      return redirect('teacher/create');
     }
-    //echo '<pre>';
-    //var_dump($answers);
-    //echo '</pre>';
+   
 }

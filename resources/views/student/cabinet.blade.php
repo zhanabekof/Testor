@@ -3,12 +3,8 @@
 
 <div class="row">
     <div class="col-md-4">
-    
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeOUnh
         TI2cdtTmNaiqOMW8JWNlmLgtzQSbwx_YyfY8pgerSdbcZQ" alt="" class="profile-image" />
-               
-        
-           
     </div>
     <div class="col-md-8">
 	<table class="table table-stripped">

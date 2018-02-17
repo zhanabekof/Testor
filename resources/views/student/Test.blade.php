@@ -4,8 +4,8 @@
   <h1>Тесты по {{$subject->sub_name}} </h1>
 </header>
 <ol>
-    @foreach($tests as $test)
-      <li><strong>{{$test->test_name}}</strong><br>
+    @foreach($tests as $question)
+      <li><strong>{{$question->question_name}}</strong><br>
         @foreach($answers as $answer)
             <div class="radio">
                 <label>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Model;
+use App\Quotation;
 use Illuminate\Http\Request;
 use App\Subject;
 use App\Test;
+use App\Question;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
@@ -32,17 +35,16 @@ class StudentController extends Controller
     {
 
       $subject = DB::table('subject')->where('id', $request->id)->first();
-      $tests = DB::table('test')->where('id', $request->id)->get();
-
-      $answers = [];
-      for ($i=0; $i < count($tests) ; $i++) {
-           $answers = DB::table('answer')->where('question_id', $tests[$i]->Id)->get();
-           //echo '<pre>';
-           //var_dump($answers);
-           //echo '</pre>';
+      $questions = DB::table('questions')->where('test_id', $request->id)->get();
+      $totalRows = count($questions) - 1;
+      $skip = $totalRows > 0 ? mt_rand(0, $totalRows) : 0;
+      $answers=[];
+      for ($i = 0; $i < count($questions); $i++) {
+        $answers = DB::table('answer')->where('question_id', $questions[$i]->id)->get();
       }
-
-      return view('student.Test',['tests'=>$tests,'subject'=>$subject,'answers'=>$answers]);
+      
+      Question::skip($skip)->take(10);
+      return view('student.Test',['tests'=>$questions,'subject'=>$subject,'answers'=>$answers]);
     }
     /**
      * Show the application dashboard.

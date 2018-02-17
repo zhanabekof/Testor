@@ -7,6 +7,5 @@
      <h3 class="text-center" id="nutshell">Студенты Компьютерной Академии ШАГ! Группа SEP-152!</h3>
       <hr width="7%">
      <div class="row" id="row1">
-       
   </div>
   @endsection('content')
