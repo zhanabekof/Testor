@@ -24,5 +24,5 @@
 
 </form>
 
-<a href="" class="btn btn-danger">Выйти из тестирования</a>
+<a href="/student/cabinet" class="btn btn-danger">Выйти из тестирования</a>
 @endsection
