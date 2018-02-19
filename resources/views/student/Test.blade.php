@@ -5,7 +5,7 @@
 </header>
 <form action="testComplete" method="POST">  
 <input type="hidden" name="sub_id" value="{{$subject->id}}">
-<input type="hidden" name="question_id" value="{{$question->id}}">
+<input type="hidden" name="question_id" value="{{$question->question_name}}">
 {{ csrf_field() }}
 <div style="margin-top:20px">
 

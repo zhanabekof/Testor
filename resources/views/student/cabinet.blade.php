@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<td>
-			Количество отвечено правильных вопросов
+			Количество отвеченых вопросов
 			</td>
 			<td>
 			{{ $historycount }}
@@ -44,23 +44,25 @@
 	<thead>
 		<tr>
 			<th><h1>Вопрос</h1></th>
-			<th><h1>Название теста</h1></th>
-			<th><h1>Дата прохождения теста</h1></th>
-			<th><h1>Количество баллов</h1></th>
+			
+			<th><h1>Дата ответа</h1></th>
+			<th><h1>Правильность</h1></th>
 		</tr>
 	</thead>
 	<tbody>
-	@foreach($questions as $question)
+	@foreach($history as $histor)
 		<tr>
-			<td> {{$question->question_name}}</td>
-			@foreach($answers as $answer)
-			<td>{{$answer->answer_name}}</td>
-			@endforeach
-			
-			<td>6369</td>
-			<td>01:32:50</td>
+			<td>{{$histor->question}}</td>
+			<td>{{$histor->created_at}}</td>
+			@if ($histor->result == 1)
+				<td>Правильно</td>
+			@else
+				<td>Неправильно</td>
+			@endif
 		</tr>
+
 		@endforeach
+	
        
 	</tbody>
 </table>

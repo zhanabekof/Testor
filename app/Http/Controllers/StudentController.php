@@ -31,16 +31,10 @@ class StudentController extends Controller
     public function GetCabinet()
     {
       $user = Auth::user();
-      $history = History::where('result',1)->where('user_id',Auth::id())->get();
+      $history = History::where('user_id',Auth::id())->get();
       $historycount = count($history);
-      $questions = [];
-      $answers = [];
-
-     
       return view('student.cabinet',[
         'user'=> $user,
-        'questions'=>$questions,
-        'answers'=>$answers,
       'history'=>$history,
       'historycount'=>$historycount
       ]);
@@ -52,7 +46,7 @@ class StudentController extends Controller
       $history = new History();
       $history->test_id = $request->sub_id;
       $history->user_id = Auth::id();
-      $history->question_id = $request->question_id;
+      $history->question = $request->question_id;
       $history->result = $request->answer;
       $history->save();
       
