@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Subject;
 use App\Test;
 use App\Question;
+use App\History;
+use App\Answer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class StudentController extends Controller
@@ -29,23 +31,45 @@ class StudentController extends Controller
     public function GetCabinet()
     {
       $user = Auth::user();
-      return view('student.cabinet',['user'=>$user]);
+      $history = History::where('result',1)->where('user_id',Auth::id())->get();
+      $historycount = count($history);
+      $questions = [];
+      $answers = [];
+
+     
+      return view('student.cabinet',[
+        'user'=> $user,
+        'questions'=>$questions,
+        'answers'=>$answers,
+      'history'=>$history,
+      'historycount'=>$historycount
+      ]);
+    }
+    public function postTestComplete(Request $request)
+    {
+      echo 'Сохранение вашего ответа ....';
+      
+      $history = new History();
+      $history->test_id = $request->sub_id;
+      $history->user_id = Auth::id();
+      $history->question_id = $request->question_id;
+      $history->result = $request->answer;
+      $history->save();
+      
+      return back();
+    
     }
     public function GetTest(Request $request)
     {
 
       $subject = DB::table('subject')->where('id', $request->id)->first();
-      $questions = DB::table('questions')->where('test_id', $request->id)->get();
-      $totalRows = count($questions) - 1;
-      $skip = $totalRows > 0 ? mt_rand(0, $totalRows) : 0;
-      $answers=[];
-    
-      for ($i = 0; $i < count($questions); $i++) {
-        $answers = DB::table('answer')->where('question_id', $questions[$i]->id)->get();
-      }
-      
-      Question::skip($skip)->take(10);
-      return view('student.Test',['tests'=>$questions,'subject'=>$subject,'answers'=>$answers]);
+      $question = Question::orderByRaw("RAND()")->where('test_id',$subject->id)->first();
+      $answers = DB::table('answer')->where('question_id', $question->id)->get();
+      return view('student.Test',[
+        'question'=>$question,
+        'subject'=>$subject,
+        'answers'=>$answers
+        ]);
     }
     /**
      * Show the application dashboard.

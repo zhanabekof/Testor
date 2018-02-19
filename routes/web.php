@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/teacher/create','TeacherController@getCreate');
   Route::get('/teacher/questions','TeacherController@getQuestions');
   Route::post('/teacher/create','TeacherController@postCreate');
+  Route::post('/student/test/testComplete','StudentController@postTestComplete');
   Route::get('/teacher/getquestion','TeacherController@getQuestion');
   Route::get('/student/subjects','StudentController@getSubjects');
   
